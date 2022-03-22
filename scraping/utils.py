@@ -29,14 +29,14 @@ def habr_parser(url):
             div = article.find_all_next('div',class_='tm-article-snippet')
             for i in div:
                 title = i.find('h2',class_='tm-article-snippet__title tm-article-snippet__title_h2').text.strip()
-                user = i.find('div',class_='tm-article-snippet__meta-container').text.strip()
+                user = i.find('a', class_ = 'tm-user-info__username').text.strip()
                 url = 'https://habr.com' + i.find('h2', class_ = 'tm-article-snippet__title tm-article-snippet__title_h2').a['href']
-                profile =  'https://habr.com'  + i.a['href']
+                profile = 'https://habr.com' + i.a['href']
                 # image = i.find('img', class_='tm-article-snippet__lead-image').a['src']
                 description = i.find('div', class_='article-formatted-body article-formatted-body_version-2')
-                views = i.find('div',class_='tm-icon-counter tm-data-icons__item')
-                save = i.find('div',class_='bookmarks-button tm-data-icons__item')
+                views = i.find('span', class_='tm-icon-counter tm-data-icons__item')
+                comm = i.find('div',class_='tm-article-comments-counter-link tm-data-icons__item')
                 posts.append({'title':title,'user':user, url:url,'profile':profile,
-                            'views':views,'save':save,'description':description})
+                            'views':views,'comm':comm,'description':description})
             return posts
    
