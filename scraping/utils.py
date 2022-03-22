@@ -36,7 +36,7 @@ def habr_parser(url):
                 description = i.find('div', class_='article-formatted-body article-formatted-body_version-2')
                 views = i.find('span', class_='tm-icon-counter tm-data-icons__item')
                 comm = i.find('div',class_='tm-article-comments-counter-link tm-data-icons__item')
-                posts.append({'title':title,'user':user, url:url,'profile':profile,
+                posts.append({'title':title,'user':user,  'url':url,'profile':profile,
                             'views':views,'comm':comm,'description':description})
             return posts
    
