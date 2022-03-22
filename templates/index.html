@@ -9,7 +9,6 @@
         {% csrf_token %}
         {% for post in posts %}
         <div class="card">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
             <a href = "{{post.profile}}"<h5>{{post.user}}</h5></a> 
             <div class="card-body">
               <h3 class="card-title">{{ post.title}}</h3> 
