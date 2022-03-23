@@ -38,5 +38,5 @@ def habr_parser(url):
                 comm = i.find('div',class_='tm-article-comments-counter-link tm-data-icons__item')
                 posts.append({'title':title,'user':user,  'url':url,'profile':profile,
                             'views':views,'comm':comm,'description':description})
-            return posts
+        return posts
    
